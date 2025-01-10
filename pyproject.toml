@@ -1,3 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elastic-pipes"
+version = "0.0"
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.8"
+dependencies = [
+  "elasticsearch>=8.2.0",
+  "pyyaml",
+  "requests",
+]
+
+[tool.setuptools]
+packages = ["elastic.pipes.core"]
+
+[tool.setuptools.package-dir]
+"elastic.pipes.core" = "core"
+
 [tool.black]
 line-length = 140
 target-version = ["py38"]
